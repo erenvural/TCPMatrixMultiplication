@@ -44,7 +44,7 @@ public class TcpService implements Serializable{
                         Thread.sleep(250);
                     }
                 } catch (SocketException se) {
-                    //ComputerOperations.importMatrix();
+                    //ComputerOperations.importMatrix(); //Using for output of tcp result matrix
                     System.out.println("\nOperation comlete !\nThe sockets are no longer open! Program is closing... ");
                     System.exit(0);
                 } catch (IOException | InterruptedException e) {

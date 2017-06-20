@@ -12,11 +12,13 @@ import java.util.ArrayList;
  * Created by eren on 20.06.2017.
  */
 public class MainClassTest {
-
     private MatrixOperations matrixOperations = new MatrixOperations();
     private ComputerOperations computerOperations = new ComputerOperations();
 
-    @Test(enabled = true)
+    /* TESTING SUMMARY: Divided TCP matrix multiplication test ends about 16 times faster than regular matrix multiplication test !
+    * Regular Matrix Multiplication Test is now disenabled. If you want execute that test. Change enabled = true in Line 41*/
+
+    @Test(enabled = true) //Test ends in about 0.5 seconds
     public void testMatriceProperties() throws Exception {
 
         Matrix matrix1 = Matrix.random(1000, 1000);
@@ -36,7 +38,7 @@ public class MainClassTest {
         Assert.assertTrue(matrix1Row % 4 == 0); //Test: Is row number of first matrix power of 4 ?
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false , dependsOnMethods = { "testMatriceProperties" })     //Test ends in about 12 seconds
     public void testRegularMatrixMultiplication() throws Exception {
 
         Matrix matrix1 = Matrix.random(1000, 1000);
@@ -59,7 +61,7 @@ public class MainClassTest {
         Assert.assertEquals(firstRowAndColumnMultiplication, regularResultMatrix.values[0][0]);
     }
 
-    @Test(enabled = true, timeOut = 100000)
+    @Test(enabled = true , dependsOnMethods = { "testMatriceProperties" }) //Test ends in about 0.75 seconds 1 seconds
     public void testMatricesTcpMultiplication() throws Exception {
 
         ArrayList<Computer> computers = computerOperations.findComputers();
