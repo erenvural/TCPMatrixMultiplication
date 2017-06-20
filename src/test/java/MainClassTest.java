@@ -36,14 +36,13 @@ public class MainClassTest {
         Assert.assertTrue(matrix1Row % 4 == 0); //Test: Is row number of first matrix power of 4 ?
     }
 
-    @Test(enabled = true, timeOut = 100000)
+    @Test(enabled = true)
     public void testRegularMatrixMultiplication() throws Exception {
 
         Matrix matrix1 = Matrix.random(1000, 1000);
         Matrix matrix2 = Matrix.random(1000, 1000);
         Matrix regularResultMatrix = MatrixOperations.regularMatrixMultiplication(matrix1, matrix2);
         Assert.assertNotNull(regularResultMatrix);
-
         //Test: Is row number of multiplication result matrix equal to row number of first matrix ?
         Assert.assertEquals(matrix1.getRowNumber(), regularResultMatrix.getRowNumber());
         //Test: Is column number of multiplication result matrix equal to column number of second matrix ?
@@ -60,7 +59,7 @@ public class MainClassTest {
         Assert.assertEquals(firstRowAndColumnMultiplication, regularResultMatrix.values[0][0]);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = true, timeOut = 100000)
     public void testMatricesTcpMultiplication() throws Exception {
 
         ArrayList<Computer> computers = computerOperations.findComputers();
@@ -82,8 +81,8 @@ public class MainClassTest {
         for (int i = 0; i < computers.size(); i++){
             hostName = computers.get(i).getComputerIp();
             portNumber = computers.get(i).getComputerPortNumber();
-            Assert.assertNotNull(hostName); //Test: Can get hostname proprely
-            Assert.assertNotNull(portNumber); //Test: Can get portname proprely
+            Assert.assertNotNull(hostName); //Test: Can get hostname properly
+            Assert.assertNotNull(portNumber); //Test: Can get portname properly
             TcpService.startServer(portNumber);
             if (i == 0){
                 TcpService.startSender(tempMatrix1, matrix2, hostName, portNumber, 1);
