@@ -26,7 +26,7 @@ public class MainClassTest {
     * P.S: When testPossibleErrors method is enable run only method test not class test.*/
 
     @Test(enabled = true, groups = "testMatriceProperties") //Test ends in about 0.5 seconds
-    public void testMatriceProperties() throws Exception {
+        public void testMatriceProperties() throws Exception {
         System.out.println("@Test - testMatriceProperties");
         Matrix matrix1 = Matrix.random(1000, 1000);
         Matrix matrix2 = Matrix.random(1000, 1000);
@@ -112,11 +112,13 @@ public class MainClassTest {
 
         //1) Rule breaking: Row and Column numbers of Matrices must be bigger than 0. The program closes.
         //Matrix testMatrix1 = Matrix.random(-5, 1000);
+        //Assert.assertNull(testMatrix1);
 
         //2) Rule Breaking: Column Number of First Matrix is must be equal to Row Number of Second Matrix. Throws IllegalArgumentException.
         /*Matrix matrix1 = Matrix.random(16, 16);
         Matrix matrix2 = Matrix.random(15, 16);
-        Matrix regularResultMatrix = MatrixOperations.regularMatrixMultiplication(matrix1, matrix2);*/
+        Matrix regularResultMatrix = MatrixOperations.regularMatrixMultiplication(matrix1, matrix2);
+        Assert.assertNull(regularResultMatrix);*/
     }
 
    //Configuration Testing Methods

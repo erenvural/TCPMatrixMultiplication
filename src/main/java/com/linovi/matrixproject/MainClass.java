@@ -26,10 +26,10 @@ public class MainClass {
         ArrayList<Computer> computers = computerOperations.findComputers();
 
         //Creating 2 Random Matrix
-        Matrix matrix1 = Matrix.random(16, 16);
-        Matrix matrix2 = Matrix.random(16, 16);
-        //Matrix matrix1 = Matrix.random(1000, 1000); //Code line for create large size Matrices
-        //Matrix matrix2 = Matrix.random(1000, 1000); //Code line for create large size Matrices
+        Matrix matrix1 = Matrix.random(1000, 1000);
+        Matrix matrix2 = Matrix.random(1000, 1000);
+        //Matrix matrix1 = Matrix.random(16, 16); //Code line for create small size Matrices
+        //Matrix matrix2 = Matrix.random(16, 16); //Code line for create small size Matrices
         System.out.println("Randomly generated First Matrix ("+matrix1.getRowNumber()+" X "+matrix1.getColumnNumber()+")");
         MatrixOperations.writeMatrix(matrix1);
         System.out.println("\nRandomly generated Second Matrix ("+matrix2.getRowNumber()+" X "+matrix2.getColumnNumber()+")");
