@@ -48,7 +48,7 @@ public class TcpService implements Serializable{
                     System.out.println("\nOperation comlete !\nThe sockets are no longer open! Program is closing... ");
                     System.exit(0);
                 } catch (IOException | InterruptedException e) {
-                    System.out.println("Error in on the Client Side\nException Founded: " + e.toString());
+                    System.out.println("Error in on the Client Side\nException Founded: " + e);
                 }
             }
         }).start();
@@ -99,7 +99,7 @@ public class TcpService implements Serializable{
                     }
 
                 } catch (IOException | ClassNotFoundException e) {
-                    System.out.println("Error in on the Server Side\nException Founded: " + e.toString());
+                    System.out.println("Error in on the Server Side\nException Founded: " + e);
                 }
             }
         }).start();

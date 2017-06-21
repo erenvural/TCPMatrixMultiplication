@@ -21,7 +21,7 @@ public class MainClass {
     private static ComputerOperations computerOperations = new ComputerOperations();
     private static boolean matrixRules = true;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         //Finding Available Computers from text file. Now there are 4 computers (their ip's:localhost)
         ArrayList<Computer> computers = computerOperations.findComputers();
 
